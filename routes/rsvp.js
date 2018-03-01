@@ -8,3 +8,15 @@ var data = {
 exports.adminView = function(req, res){
   res.render('rsvp', data);
 };
+
+exports.addRSVP = function(req, res){
+    var rsvpEmail = req.body.rsvpEmail;
+    
+    // Print when a POST is made
+    console.log(rsvpEmail);
+    
+    data.rsvp.push(rsvpEmail); // Add to current data
+    
+    // Send our task name back so our browser knows it worked out
+    res.send(rsvpEmail);
+}
